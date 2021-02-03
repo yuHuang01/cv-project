@@ -4,7 +4,7 @@ class DisplayCV extends React.Component {
   render() {
     return (
       <div id="displayCV">
-        <h1>Display</h1>
+        <h1>Your CV</h1>
       </div>
     )
   }

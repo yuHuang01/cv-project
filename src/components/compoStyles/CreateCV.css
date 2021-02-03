@@ -1,0 +1,88 @@
+#createCV {
+  width: 560px;
+  border-top: none;
+  border: 1px solid grey;
+  border-top: none;
+  padding: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+form input {
+  outline: none;
+  padding: 5px;
+}
+.formInput {
+  height: 18px;
+}
+
+.name {
+  width: 255px;
+}
+#first {
+  margin-right: 10px;
+}
+
+#phoneNum {
+  width: 190px;
+  margin-right: 10px;
+}
+#email {
+  width: 320px;
+}
+
+#eduLabel {
+  margin-top: 20px;
+}
+#practicalLabel {
+  margin-top: 20px;
+}
+
+.list-items {
+  border: 1px solid grey;
+  padding: 10px;
+}
+.list-items h3 {
+  margin-top: 0px;
+}
+.change-btns {
+  padding: 8px;
+  background-color: green;
+  color: white;
+  outline: none;
+  border: none;
+  margin-right: 10px;
+}
+
+.add {
+  width: 80px;
+  height: 30px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}
+
+#submit {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  border: none;
+  outline: none;
+
+  margin: 20px auto;
+}

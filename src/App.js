@@ -14,8 +14,12 @@ class App extends React.Component {
       email: '',
       phonenumber: '',
 
-      eduExp: [],
-      practicalExp: [],
+      eduExp: [
+        {schoolName: 'Boronkay', titleOfStudy: 'engineering', dateOfStudy: {start: 2016, end: 2020}, id: '123'}
+      ],
+      practicalExp: [
+        {companyName: 'Decathlon', position: 'sporttanácsadó', mainTasks: [{task:'kassza', id: '0'}, {task:'direkt eladás', id: '1'}], dateOfWork: {start: 2018, end: 2021}, id: '456'}
+      ],
     }
 
     //binding this:
@@ -41,11 +45,11 @@ class App extends React.Component {
     let currentDisp;
     let currentNav;
     if(isCreating){
-      currentNav = <Navbar create = { this.handleCreate } display = { this.handleDisplay } createBg = 'green' displayBg = 'white' />
-      currentDisp = <CreateCV />;
+      currentNav = <Navbar create = { this.handleCreate } display = { this.handleDisplay } createBg = 'green' displayBg = 'white' createText = 'white' displayText ='black'/>
+      currentDisp = <CreateCV schools = { this.state.eduExp } pracExp = { this.state.practicalExp }/>;
     }else{
-      currentNav = <Navbar create = { this.handleCreate } display = { this.handleDisplay } createBg = 'white' displayBg = 'green' />
-      currentDisp = <DisplayCV />;
+      currentNav = <Navbar create = { this.handleCreate } display = { this.handleDisplay } createBg = 'white' displayBg = 'green' createText = 'black' displayText = 'white'/>
+      currentDisp = <DisplayCV schools = { this.state.eduExp } pracExp = { this.state.practicalExp }/>;
     }
     return (
       <div id="main">
