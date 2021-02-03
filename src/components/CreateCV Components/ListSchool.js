@@ -8,8 +8,8 @@ class NewSchool extends React.Component {
           return (
             <div className="list-items" key={ school.id }>
               <h3>{ school.schoolName }</h3>
-              <p>Your title of study was: { school.titleOfStudy }</p>
-              <p>And your study date was from { school.dateOfStudy.start } to { school.dateOfStudy.end }</p>
+              <p>Your title of study was: <strong>{ school.titleOfStudy } </strong></p>
+              <p>And your study date was from <strong>{ school.dateOfStudy.start }</strong> to <strong>{ school.dateOfStudy.end } </strong></p>
               <button className="change-btns"><i className="far fa-edit"></i></button> 
               <button className="change-btns"><i className="far fa-trash-alt"></i></button>
             </div>

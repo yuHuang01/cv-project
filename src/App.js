@@ -18,7 +18,7 @@ class App extends React.Component {
         {schoolName: 'Boronkay', titleOfStudy: 'engineering', dateOfStudy: {start: 2016, end: 2020}, id: '123'}
       ],
       practicalExp: [
-        {companyName: 'Decathlon', position: 'sporttanácsadó', mainTasks: [{task:'kassza', id: '0'}, {task:'direkt eladás', id: '1'}], dateOfWork: {start: 2018, end: 2021}, id: '456'}
+        {companyName: 'Decathlon', position: 'sporttanácsadó', mainTasks: 'kassza, direkt eladás', dateOfWork: {start: 2018, end: 2021}, id: '456'}
       ],
     }
 

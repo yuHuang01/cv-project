@@ -23,8 +23,8 @@ class CreateCV extends React.Component {
     this.addSchool = this.addSchool.bind(this);
 
     this.renderPractInputForm = this.renderPractInputForm.bind(this);
-    this.addPrat = this.addPrat.bind(this)
-    this.changePracFillState = this.changePracFillState.bind(this);
+    this.addPract = this.addPract.bind(this)
+    this.changePractFillState = this.changePractFillState.bind(this);
   };
 
   //change fill satte
@@ -33,7 +33,7 @@ class CreateCV extends React.Component {
       isFillingSchool: boolean,
     })
   }
-  changePracFillState(boolean){
+  changePractFillState(boolean){
     this.setState({
       isFillingPrac: boolean,
     })
@@ -75,8 +75,26 @@ class CreateCV extends React.Component {
       document.getElementById('practical')
     )
   };
-  addPrat(){
-    
+  addPract(){
+    const companyName = document.getElementById('companyName').value;
+    const position = document.getElementById('position').value;
+    const mainTasks = document.getElementById('mainTasks').value;
+    const startDate = document.getElementById('startPract').value;
+    const endDate = document.getElementById('endPract').value;
+    const practId = uniqid();
+
+    const newPract = {
+      companyName: companyName,
+      position: position,
+      mainTasks: mainTasks,
+      dateOfWork: {
+        start: startDate,
+        end: endDate,
+      },
+      id: practId,
+    };
+
+    this.props.addNewPract(newPract);
   };
 
 
@@ -89,15 +107,15 @@ class CreateCV extends React.Component {
 
     if( !fillStateSchool ){
       addSchoolBtnFunc = () => {
-        this.renderSchoolInputForm(<AddSchool renderSchoolInputForm = {this.renderSchoolInputForm} addSchool = { this.addSchool } changeSchoolFillState = { this.changeSchoolFillState }/>);
+        this.renderSchoolInputForm(<AddSchool renderSchoolInputForm = {this.renderSchoolInputForm } addSchool = { this.addSchool } changeSchoolFillState = { this.changeSchoolFillState }/>);
         this.changeSchoolFillState(true);
       }
     }
 
     if( !fillStatePrac ){
       addPracBtnFunc = () => {
-        this.renderPractInputForm();
-        this.changeSchoolFillState();
+        this.renderPractInputForm(<AddPracExp renderPractInputForm = { this.renderPractInputForm } addPract = { this.addPract } changePractFillState = { this.changePractFillState }/>);
+        this.changePractFillState(true);
       }
     } else {
 

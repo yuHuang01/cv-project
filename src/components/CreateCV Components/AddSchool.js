@@ -3,7 +3,7 @@ import React from 'react';
 class AddSchool extends React.Component {
   render() {
     return (
-      <form className= "school-form">
+      <form className= "add-new-exp-form">
         <label htmlFor="schoolName">School name:</label>
         <input type="text" name="schoolName" className='formInput' id="schoolName"/>
 
