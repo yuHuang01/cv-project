@@ -53,15 +53,19 @@ class CreateCV extends React.Component {
     const titleOfStudy = document.getElementById('titleOfStudy').value;
     const startSchool = document.getElementById('startSchool').value;
     const endSchool = document.getElementById('endSchool').value;
+    const schoolId = uniqid();
     
-    const newSchool = {
+    const newSchool = [{
       schoolName: schoolName,
       titleOfStudy: titleOfStudy,
       dateOfStudy: {
         start: startSchool,
         end: endSchool,
-      }
-    }
+      },
+      id: schoolId,
+    }]
+
+    this.props.addNewSchool( newSchool );
   };
   
     //Prac functions
@@ -85,9 +89,7 @@ class CreateCV extends React.Component {
 
     if( !fillStateSchool ){
       addSchoolBtnFunc = () => {
-        console.log('not filling');
-        console.log(this.state.isFillingSchool);
-        this.renderSchoolInputForm();
+        this.renderSchoolInputForm(<AddSchool renderSchoolInputForm = {this.renderSchoolInputForm} addSchool = { this.addSchool } changeSchoolFillState = { this.changeSchoolFillState }/>);
         this.changeSchoolFillState(true);
       }
     }
@@ -116,21 +118,22 @@ class CreateCV extends React.Component {
 
           {/*Studies: */}
           <label htmlFor="studies" id="eduLabel">Educational experiences: </label>
+          <ListSchool schools = { this.props.schools } />
           <div id="school" className="added">
 
-            {/*Place to insert educational experiences*/}
-            <ListSchool schools = { this.props.schools } />
-
+            {/*Place to insert educational experiences form*/}
+            
           </div>
           <button type="button" className="add" onClick= { addSchoolBtnFunc }><i className="fas fa-plus"></i>Add</button>
 
           {/*Practical experiences: */}
           <label htmlFor="practical" id="practicalLabel">Practical experiences:</label>
+          <ListPract pracExps = { this.props.pracExp }/>
+
           <div id="practical" className="added">
 
-            {/*Place to insert practical experiences*/}
-            <ListPract pracExps = { this.props.pracExp }/>
-
+            {/*Place to insert practical experience form*/}
+            
           </div>
           <button type="button" className="add" onClick= { addPracBtnFunc }><i className="fas fa-plus"></i>Add</button>
 

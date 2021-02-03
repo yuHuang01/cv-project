@@ -25,6 +25,8 @@ class App extends React.Component {
     //binding this:
     this.handleCreate = this.handleCreate.bind(this);
     this.handleDisplay = this.handleDisplay.bind(this);
+    this.addNewSchool = this.addNewSchool.bind(this);
+    this.addNewPract = this.addNewPract.bind(this);
   };
 
   //Navbar functions
@@ -40,13 +42,25 @@ class App extends React.Component {
     });
   };
 
+  //Set state:
+  addNewSchool(schoolObj){
+    this.setState({
+      eduExp: this.state.eduExp.concat(schoolObj),
+    })
+  }
+
+  addNewPract(practObj){
+    this.setState({
+      practicalExp: this.state.practicalExp.concat(practObj),
+    })
+  }
   render(){
     let isCreating = this.state.isCreating
     let currentDisp;
     let currentNav;
     if(isCreating){
       currentNav = <Navbar create = { this.handleCreate } display = { this.handleDisplay } createBg = 'green' displayBg = 'white' createText = 'white' displayText ='black'/>
-      currentDisp = <CreateCV schools = { this.state.eduExp } pracExp = { this.state.practicalExp }/>;
+      currentDisp = <CreateCV schools = { this.state.eduExp } pracExp = { this.state.practicalExp } addNewSchool = { this.addNewSchool } addNewPract = { this.addNewPract }/>;
     }else{
       currentNav = <Navbar create = { this.handleCreate } display = { this.handleDisplay } createBg = 'white' displayBg = 'green' createText = 'black' displayText = 'white'/>
       currentDisp = <DisplayCV schools = { this.state.eduExp } pracExp = { this.state.practicalExp }/>;

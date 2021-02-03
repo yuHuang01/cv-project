@@ -13,7 +13,11 @@ class AddSchool extends React.Component {
         <label htmlFor="date">Date of study: (start and end)</label>
         <input type="date" name="start" className='formInput' id="startSchool"/>
         <input type="date" name="end" className='formInput' id="endSchool"/>
-        <div id="addSchoolBtn" onClick= { () => { this.props.changeFillSchoolState( false ) } }>Add School!</div>
+        <button type="button" id="addSchoolBtn" className="addNewExpBtn" onClick= { () => { 
+          this.props.addSchool()
+          this.props.changeSchoolFillState( false );
+          this.props.renderSchoolInputForm( null );
+          } }>Add School!</button>
       </form>
     )
   }
