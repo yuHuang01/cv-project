@@ -3,7 +3,7 @@ import React from 'react';
 class ListDisplayPract extends React.Component {
   render() {
     return (
-      <div id="listDisplayPract">
+      <div id="listDisplayPract" className="list-container">
         <h2>Practical experiences: </h2>
         { this.props.pracExps.map((pract) => {
           return (
