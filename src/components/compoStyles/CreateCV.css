@@ -5,7 +5,7 @@
   border-top: none;
   padding: 20px;
 }
-/*General user information part*/
+/*General user information */
 form label {
   display: block;
   margin-top: 10px;
@@ -31,6 +31,9 @@ form input {
 }
 #email {
   width: 320px;
+}
+#address {
+  width: 535px;
 }
 
 /*Educational and practical experiences*/
@@ -90,20 +93,4 @@ form input {
   border: none;
   outline: none;
   margin-top: 10px;
-}
-
-#submit {
-  width: 100px;
-  height: 40px;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: green;
-  color: white;
-  border: none;
-  outline: none;
-
-  margin: 20px auto;
 }

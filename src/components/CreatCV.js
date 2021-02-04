@@ -128,11 +128,13 @@ class CreateCV extends React.Component {
 
           { /*General user informations:*/}
           <label htmlFor="name">Enter your name:</label>
-          <input type="text" className="name formInput" name="first" id="first" placeholder="Your first name..."/>
-          <input type="text" className="name formInput" name="last" id="last" placeholder="Your last name..." />
+          <input type="text" className="name formInput" name="first" id="first" placeholder="Your first name..." onInput = { () => { this.props.saveFirst() } }/>
+          <input type="text" className="name formInput" name="last" id="last" placeholder="Your last name..."  onInput = { () => { this.props.saveLast() }}/>
           <label htmlFor="contact">Contacts:</label>
-          <input type="text" className="contacts formInput" name="phoneNum" id="phoneNum" placeholder="Phone number..." />
-          <input type="email" className="contacts formInput" name="email" id="email" placeholder="E-mail..."></input>
+          <input type="text" className="contacts formInput" name="phoneNum" id="phoneNum" placeholder="Phone number..." onInput = { () => { this.props.savePhone() }} />
+          <input type="email" className="contacts formInput" name="email" id="email" placeholder="E-mail..." onInput = { () => { this.props.saveEmail() } }></input>
+          <label htmlFor="address">Your address:</label>
+          <input type="text" className="formInput" name="address" id="address" placeholder="And your address..." onInput = { () => { this.props.saveAdd() }}/>
 
           {/*Studies: */}
           <label htmlFor="studies" id="eduLabel">Educational experiences: </label>
@@ -154,8 +156,6 @@ class CreateCV extends React.Component {
             
           </div>
           <button type="button" className="add" onClick= { addPracBtnFunc }><i className="fas fa-plus"></i>Add</button>
-
-          <button type="submit" id="submit">Submit!</button>
         </form>
       </div>
     )
