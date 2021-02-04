@@ -1,0 +1,35 @@
+#displayCV {
+  width: 580px;
+  border-top: none;
+  border: 1px solid grey;
+  border-top: none;
+  padding: 10px;
+}
+.fas{
+  font-size: 27px;
+}
+
+#displayCV > h1 {
+  margin-top: 0px;
+  border-bottom: 1px solid grey;
+}
+
+.general{
+  display: inline-block;
+  width: 50%;
+}
+.nameInf{
+  font-size: 50px;
+}
+.expTitles {
+  display: inline;
+}
+/*School*/
+#listDisplaySchool {
+  border-top: 1px solid grey;
+}
+
+/*Pract*/
+#listDisplayPract {
+  border-top: 1px solid grey;
+}

@@ -3,11 +3,11 @@ import './compoStyles/CreateCV.css';
 import ReactDOM from 'react-dom';
 import uniqid from 'uniqid';
 
-import AddSchool from './CreateCV Components/AddSchool';
-import ListSchool from './CreateCV Components/ListSchool';
+import AddSchool from './CreateCV_Components/AddSchool';
+import ListSchool from './CreateCV_Components/ListSchool';
 
-import AddPracExp from './CreateCV Components/AddPracExp';
-import ListPract from './CreateCV Components/ListPract';
+import AddPracExp from './CreateCV_Components/AddPracExp';
+import ListPract from './CreateCV_Components/ListPract';
 
 class CreateCV extends React.Component {
   constructor(){
