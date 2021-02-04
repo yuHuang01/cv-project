@@ -138,7 +138,7 @@ class CreateCV extends React.Component {
 
           {/*Studies: */}
           <label htmlFor="studies" id="eduLabel">Educational experiences: </label>
-          <ListSchool schools = { this.props.schools } />
+          <ListSchool schools = { this.props.schools } deleteSchool = { this.props.deleteSchool }/>
           <div id="school" className="added">
 
             {/*Place to insert educational experiences form*/}
@@ -148,7 +148,7 @@ class CreateCV extends React.Component {
 
           {/*Practical experiences: */}
           <label htmlFor="practical" id="practicalLabel">Practical experiences:</label>
-          <ListPract pracExps = { this.props.pracExp }/>
+          <ListPract pracExps = { this.props.pracExp } deletePract = { this.props.deletePract } />
 
           <div id="practical" className="added">
 

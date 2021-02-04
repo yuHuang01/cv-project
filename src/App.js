@@ -59,7 +59,7 @@ class App extends React.Component {
     })
   };
   deleteSchool(id){
-    const newSchools = this.state.eduExp.filter((edu) => edu !== id)
+    const newSchools = this.state.eduExp.filter((edu) => edu.id !== id);
     this.setState({
       eduExp: newSchools,
     });
@@ -124,6 +124,7 @@ class App extends React.Component {
 
       currentDisp = <CreateCV schools = { this.state.eduExp } pracExp = { this.state.practicalExp }
                     addNewSchool = { this.addNewSchool } addNewPract = { this.addNewPract }
+                    deleteSchool = { this.deleteSchool } deletePract = { this.deletePract }
                     saveFirst = { this.saveFirst } saveLast = { this.saveLast } saveEmail = { this.saveEmail }
                     savePhone = { this.savePhone } saveAdd = {this.saveAdd } />;
 

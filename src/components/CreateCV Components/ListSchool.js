@@ -10,8 +10,8 @@ class NewSchool extends React.Component {
               <h3>{ school.schoolName }</h3>
               <p>Your title of study was: <strong>{ school.titleOfStudy } </strong></p>
               <p>And your study date was from <strong>{ school.dateOfStudy.start }</strong> to <strong>{ school.dateOfStudy.end } </strong></p>
-              <button className="change-btns"><i className="far fa-edit"></i></button> 
-              <button className="change-btns"><i className="far fa-trash-alt"></i></button>
+              <button type="button" className="change-btns"><i className="far fa-edit"></i></button> 
+              <button type="button" className="change-btns" onClick = { () => {this.props.deleteSchool( school.id )}}><i className="far fa-trash-alt"></i></button>
             </div>
           )
         })}
