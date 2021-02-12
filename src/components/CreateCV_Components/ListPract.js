@@ -11,6 +11,9 @@ class ListPract extends React.Component {
               <h4>{ pract.position }</h4>
               <p>Main tasks: <strong>{ pract.mainTasks }</strong></p>
               <p>The starting date was: <strong>{ pract.dateOfWork.start }</strong> and the end date was: <strong>{ pract.dateOfWork.end }</strong></p>
+
+              <div className="editPractPlace"></div>
+
               <button className="change-btns"><i className="far fa-edit"></i></button> 
               <button className="change-btns" onClick = { () => { this.props.deletePract( pract.id ) }}><i className="far fa-trash-alt"></i></button>
             </div>

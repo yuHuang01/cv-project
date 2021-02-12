@@ -107,7 +107,7 @@ class CreateCV extends React.Component {
 
     if( !fillStateSchool ){
       addSchoolBtnFunc = () => {
-        this.renderSchoolInputForm(<AddSchool renderSchoolInputForm = {this.renderSchoolInputForm } addSchool = { this.addSchool } changeSchoolFillState = { this.changeSchoolFillState }/>);
+        this.renderSchoolInputForm(<AddSchool renderSchoolInputForm = {this.renderSchoolInputForm } addSchool = { this.addSchool }changeSchoolFillState = { this.changeSchoolFillState }/>);
         this.changeSchoolFillState(true);
       }
     }
@@ -138,7 +138,9 @@ class CreateCV extends React.Component {
 
           {/*Studies: */}
           <label htmlFor="studies" id="eduLabel">Educational experiences: </label>
-          <ListSchool schools = { this.props.schools } deleteSchool = { this.props.deleteSchool }/>
+          <ListSchool schools = { this.props.schools } deleteSchool = { this.props.deleteSchool }
+          isEditingSchool = { this.isEditingSchool } editSchoolTitle = { this.props.editSchoolTitle }/>
+          
           <div id="school" className="added">
 
             {/*Place to insert educational experiences form*/}
@@ -148,7 +150,8 @@ class CreateCV extends React.Component {
 
           {/*Practical experiences: */}
           <label htmlFor="practical" id="practicalLabel">Practical experiences:</label>
-          <ListPract pracExps = { this.props.pracExp } deletePract = { this.props.deletePract } />
+          <ListPract pracExps = { this.props.pracExp } deletePract = { this.props.deletePract }
+          isEditingPract = { this.isEditingPract }/>
 
           <div id="practical" className="added">
 

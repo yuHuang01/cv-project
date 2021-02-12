@@ -27,6 +27,7 @@ class App extends React.Component {
     //binding this:
     this.handleCreate = this.handleCreate.bind(this);
     this.handleDisplay = this.handleDisplay.bind(this);
+
     this.addNewSchool = this.addNewSchool.bind(this);
     this.addNewPract = this.addNewPract.bind(this);
     this.deleteSchool = this.deleteSchool.bind(this);
@@ -37,6 +38,7 @@ class App extends React.Component {
     this.saveEmail = this.saveEmail.bind(this);
     this.savePhone = this.savePhone.bind(this);
     this.saveAdd = this.saveAdd.bind(this);
+
   };
 
   //Navbar functions
@@ -52,7 +54,7 @@ class App extends React.Component {
     });
   };
 
-  //Set state:
+  //Save school and pract:
   addNewSchool(schoolObj){
     this.setState({
       eduExp: this.state.eduExp.concat(schoolObj),
@@ -113,7 +115,6 @@ class App extends React.Component {
     })
   }
 
-
   render(){
     let isCreating = this.state.isCreating
     let currentDisp;
@@ -126,7 +127,8 @@ class App extends React.Component {
                     addNewSchool = { this.addNewSchool } addNewPract = { this.addNewPract }
                     deleteSchool = { this.deleteSchool } deletePract = { this.deletePract }
                     saveFirst = { this.saveFirst } saveLast = { this.saveLast } saveEmail = { this.saveEmail }
-                    savePhone = { this.savePhone } saveAdd = {this.saveAdd } />;
+                    savePhone = { this.savePhone } saveAdd = {this.saveAdd } 
+                    editSchoolTitle = { this.editSchoolTitle }/>;
 
     }else{
       currentNav = <Navbar create = { this.handleCreate } display = { this.handleDisplay }
@@ -138,7 +140,7 @@ class App extends React.Component {
     }
     return (
       <div id="main">
-        <i className="fas fa-user-tie"></i>
+        <i className="fas fa-user-tie" id="faUserTie"></i>
         { currentNav }
         { currentDisp }
       </div>
